@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    ul{
+      list-style:none;
+    }
+  </style>
+</head>
+<body>
+  <form class="form">
+  <input type="text" class="input-todo" placeholder="write todo"/>
+  <button class="add">Add</button>
+  </form>
+  <ul class="todos">
+       <!-- <li>
+      <input type="checkbox"/>
+      <span>test</span>
+      <button class="remove">x</button>
+    </li>  -->
+  </ul>
+
+  <script>
+    const $form = document.querySelector('.form')
+    const $inputTodo = document.querySelector('.input-todo');
+    const $button = document.querySelector('.add');
+    const $todos = document.querySelector('.todos')
+    const $text = document.querySelector('.input-todo').value 
+
+    $button.onclick = e=>{
+      const{value} = $inputTodo;
+      if(!value) return;
+      
+    const $li = document.createElement('li');
+    const $checkbox = document.createElement('input');
+    const $span =document.createElement('span');
+    const $remove = document.createElement('button');
+
+    $checkbox.setAttribute('type','checkbox');
+    $span.textContent = document.querySelector('.input-todo').value;
+    $remove.textContent = 'V';
+    // $text.nodeVlaue = '';
+    
+
+    $li.appendChild($checkbox);
+    $li.appendChild($span);
+    $li.appendChild($remove);
+    $todos.appendChild($li);
+    
+
+    };
+
+
+    
+    $form.onsubmit = e => {
+      e.preventDefault();
+    }
+  </script>
+</body>
+</html>
