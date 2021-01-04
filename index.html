@@ -1,63 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <style>
-    ul{
-      list-style:none;
-    }
-  </style>
-</head>
-<body>
-  <form class="form">
-  <input type="text" class="input-todo" placeholder="write todo"/>
-  <button class="add">Add</button>
-  </form>
-  <ul class="todos">
-       <!-- <li>
-      <input type="checkbox"/>
-      <span>test</span>
-      <button class="remove">x</button>
-    </li>  -->
-  </ul>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Todos 2.0</title>
+    <link href="css/style.css" rel="stylesheet" />
+    <script defer src="JS/prac.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title">Todos</h1>
+      <div class="ver">2.0</div>
 
-  <script>
-    const $form = document.querySelector('.form')
-    const $inputTodo = document.querySelector('.input-todo');
-    const $button = document.querySelector('.add');
-    const $todos = document.querySelector('.todos')
-    const $text = document.querySelector('.input-todo').value 
+      <input class="input-todo" placeholder="What needs to be done?" autofocus />
+      <ul class="todos">
+        <!-- <li id="1" class="todo-item">
+        <input id="ck-1" class="checkbox" type="checkbox">
+        <label for="ck-1">HTML</label>
+        <i class="remove-todo far fa-times-circle"></i>
+      </li> -->
+      </ul>
 
-    $button.onclick = e=>{
-      const{value} = $inputTodo;
-      if(!value) return;
-      
-    const $li = document.createElement('li');
-    const $checkbox = document.createElement('input');
-    const $span =document.createElement('span');
-    const $remove = document.createElement('button');
-
-    $checkbox.setAttribute('type','checkbox');
-    $span.textContent = document.querySelector('.input-todo').value;
-    $remove.textContent = 'V';
-    // $text.nodeVlaue = '';
-    
-
-    $li.appendChild($checkbox);
-    $li.appendChild($span);
-    $li.appendChild($remove);
-    $todos.appendChild($li);
-    
-
-    };
-
-
-    
-    $form.onsubmit = e => {
-      e.preventDefault();
-    }
-  </script>
-</body>
+      <footer>
+        <div class="complete-all">
+          <input class="checkbox" type="checkbox" id="ck-complete-all" />
+          <label for="ck-complete-all">Mark all as complete</label>
+        </div>
+        <div class="clear-completed">
+          <button class="btn">Clear completed (<span class="completed-todos">0</span>)</button>
+          <strong class="active-todos">0</strong> items left
+        </div>
+      </footer>
+    </div>
+  </body>
 </html>
